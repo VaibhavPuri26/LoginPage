@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: rgb(255, 255, 255);
+    --accent-color: rgb(87, 157, 47);
+    --gray: rgb(213, 213, 213);
+    --time-fast: 1s;
+    --time-slow: 2s;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding: 25px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./assets/Houseimage.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 36px;
+}
+
+@keyframes open {
+    0% {
+        height: 0;
+        width: 0;
+    }
+
+    100% {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+}
+
+.bg {
+    height: 100%;
+    width: 100%;
+    border-radius: 36px;
+    transition: var(--time-fast);
+    box-shadow: 0px 0px 0px 20px var(--primary-color);
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    z-index: 100;
+}
+
+@keyframes logoAnimations {
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    100% {
+        top: 0px;
+        left: 40px;
+        transform: rotate(360deg);
+        display: block;
+        background: none;
+    }
+}
+
+@keyframes logoAnimationsEnd {
+    0% {
+        top: -30px;
+        left: 20px;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+}
+
+.loginSectionsContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    display: none;
+    z-index: 1;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoImg {
+    width: 80px;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+}
+
+.navUl {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navLi {
+    animation: transformLeft var(--time-slow) both;
+}
+
+.navLi:first-of-type {
+    color: gray;
+    user-select: none;
+    cursor: pointer;
+}
+
+.navLi:last-of-type {
+    padding: 10px;
+    border-radius: 36px;
+    color: var(--accent-color);
+    border: solid 2px var(--accent-color);
+    font-weight: 550;
+}
+
+.name {
+    overflow: hidden;
+}
+
+.name h3, .name p {
+    animation: transformRight var(--time-fast) ease-in;
+}
+
+.dropdown-content {
+    display: none;
+    left: -200%;
+    top: 150%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.613);
+    max-width: 500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 100;
+    overflow: hidden;
+    transition: var(--time-slow) both;
+}
+
+.enroll:hover .dropdown-content {
+    display: block;
+}
+
+.dropdownUl {
+    list-style: none;
+    line-height: 2rem;
+    font-size: 0.9rem;
+    z-index: 10000;
+    color: white;
+}
+
+.dropdownLi {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdownLi div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    color: var(--accent-color);
+    background-color: rgba(87, 157, 47, 0.147);
+}
+
+@keyframes transformLeft {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-2px);
+    }
+}
+
+@keyframes transformRight {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.loginFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60%;
+    width: 60%;
+    gap: 1rem;
+    z-index: inherit;
+    animation: slideUp var(--time-fast) both;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 3vmax;
+}
+
+.heading p {
+    font-size: 1vmax;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    gap: 1rem;
+}
+
+.singleInpt {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    border: solid 1px var(--gray);
+    padding: 25px 10px 10px 10px;
+    justify-content: end;
+}
+
+.showPassword {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    display: none;
+}
+
+.inptLabel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    transition: var(--time-fast);
+}
+
+.inpts {
+    height: 25px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.singleInpt:focus-within {
+    color: var(--accent-color);
+    border: solid 2px var(--accent-color);
+    box-shadow: 0px 0px 5px 0px var(--accent-color);
+}
+
+.inpts:focus ~ .inptLabel,
+.inpts:not(:placeholder-shown) ~ .inptLabel {
+    font-size: 0.9rem;
+    top: 30%;
+}
+
+.loginBtn {
+    padding: 20px;
+    height: 60px;
+    border-radius: 36px;
+    border: none;
+    background-color: var(--gray);
+    color: white;
+    position: relative;
+}
+
+.loginBtn.active {
+    background-color: var(--accent-color);
+}
+
+.loading {
+    width: 1rem;
+    position: absolute;
+    display: none;
+}
+
+.loadingAnime {
+    display: block !important;
+    animation: loading var(--time-fast) both;
+}
+
+.loginPAnime {
+    animation: pRight var(--time-fast) both;
+}
+
+@keyframes loading {
+    from {
+        left: 0;
+        display: block;
+    }
+
+    to {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes pRight {
+    from {
+        display: block;
+    }
+
+    to {
+        display: none;
+        transform: translateX(100%);
+    }
+}
+
+.active {
+    background-color: var(--accent-color);
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.checkboxContainer input {
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    border: solid 2px var(--gray);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.checkboxContainer input:checked {
+    border-color: var(--accent-color);
+}
+
+.checkboxContainer input:checked::before {
+    content: '\2714';
+    display: block;
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 20px;
+}
+
+.forgotPassword {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.3rem;
+    font-size: 0.8vmax;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.foots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.8vmax;
+    animation: slideUp var(--time-fast) both;
+}
+
+.foots:last-of-type p:last-of-type {
+    color: var(--accent-color);
+}
+
+@keyframes slideUp {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    50% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: flex;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appearRight {
+    0% {
+        width: 0;
+        display: none;
+    }
+
+    100% {
+        width: 100%;
+        display: flex;
+    }
+}
+
+@keyframes close {
+    0% {
+        display: block;
+    }
+
+    100% {
+        height: 0;
+        width: 0;
+        display: none;
+        box-shadow: 0px 0px 0px 100000px white;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        display: block;
+    }
+
+    100% {
+        width: 0;
+        display: none;
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .logoImg {
+        width: 60px;
+    }
+
+    .loginFormContainer {
+        width: 80%;
+        height: 70%;
+    }
+
+    .heading h1 {
+        font-size: 4vmax;
+    }
+
+    .heading p {
+        font-size: 1.5vmax;
+    }
+
+    .loginBtn {
+        height: 50px;
+        padding: 10px;
+    }
+
+    .navUl {
+        flex-direction: column;
+    }
+
+    .navLi {
+        font-size: 0.9rem;
+    }
+
+    .dropdown-content {
+        left: 0;
+        top: 100%;
+        width: 100%;
+    }
+
+    .singleInpt {
+        padding: 20px 10px 10px 10px;
+    }
+
+    .showPassword {
+        right: 10px;
+        font-size: 0.9rem;
+    }
+
+    .inptLabel {
+        left: 15px;
+    }
+
+    .forgotPassword {
+        font-size: 1vmax;
+    }
+
+    .checkboxContainer input {
+        width: 20px;
+        height: 20px;
+    }
+
+    .foots {
+        font-size: 1vmax;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading h1 {
+        font-size: 5vmax;
+    }
+
+    .heading p {
+        font-size: 2vmax;
+    }
+
+    .navUl {
+        display: none; 
+    }
+
+    .loginFormContainer {
+        width: 90%;
+        height: 80%;
+    }
+
+    .loginBtn {
+        height: 40px;
+    }
+
+    .singleInpt {
+        padding: 15px 10px 5px 10px;
+    }
+
+    .showPassword {
+        right: 5px;
+        font-size: 1rem;
+    }
+
+    .inptLabel {
+        font-size: 0.8rem;
+    }
+
+    .foots {
+        font-size: 1.2rem; 
+    }
+}

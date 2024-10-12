@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Celebrare</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="logo">
+            <img class="logoImg" src="./assets/logo.png" alt="">
+        </div>
+
+        <div class="bg">
+        </div>
+
+        <div class="loginSectionsContainer">
+
+            <nav>
+                <div class="navLogo">
+                    <img style="opacity: 0;" class="logoImg" src="./assets/logo.png" alt="">
+                    
+                    <div class="name fadeable">
+                        <h3>REGIONS</h3>
+                        <p>Mortgage</p>
+                    </div>
+                </div>
+
+                <ul class=" navUl fadeable">
+                    <li class="navLi">Are you a new customer?</li>
+                    <li class="navLi enroll">
+                        Enroll Now
+                        <div class="dropdown-content">
+                            <ul class="dropdownUl">
+                                <p>Enroll now to:</p>
+                                <li class="dropdownLi">
+                                    <div><p>&#10003;</p></div>
+                                    <p>Access Your loans online</p>
+                                </li>
+                                <li class="dropdownLi">
+                                    <div><p>&#10003;</p></div>
+                                    <p>Pay your mortgage online</p>
+                                </li>
+                                <li class="dropdownLi">
+                                    <div><p>&#10003;</p></div>
+                                    <p>View your mortgage statements</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="loginFormContainer">
+                <div class="heading">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your Regions MyMortgage account.</p>
+                </div>
+
+                <form class="loginForm">
+                    <div class="singleInpt" id="IDContainer">
+                        <input class="inpts" name="id" type="text" id="id" placeholder="" required>
+                        <label class="inptLabel" for="name">Online ID</label>
+                      </div>
+          
+                      <div class="singleInpt" id="passContainer">
+                        <input class="inpts" name="password" type="password" placeholder="" id="password" required>
+                        <label class="inptLabel" for="email">Password</label>
+                        <span class="showPassword" id="showPassword">Show</span>
+                    </div>
+                    
+                        
+                        <div class="checkboxContainer">
+                            <input type="checkbox">
+                            <label for="checkbox">Remember me</label>
+                        </div>
+
+                        <button class="loginBtn" type="submit">
+                            <img class="loading" src="./assets/loading-gif.gif" alt="">
+                            <p class="loginP">Login</p>
+                        </button> 
+                </form>
+
+                <div class="forgotPassword">
+                    <p>Forgot Online ID?</p>
+                    <img style="width: 0.5rem;" src="./assets/icons8-dot-24.png" alt="">
+                    <p>Forgot Password?</p>
+                </div>
+
+            </div>
+
+            <footer>
+                <div class="foots">
+                    <img style="width: 1rem;" src="./assets/icons8-garage-24.png" alt="">
+                    <p>Equal Housing Lender</p>
+                    <img style="width: 0.5rem;" src="./assets/icons8-dot-24.png" alt="">
+                    <p>Member FDIC</p>
+                </div>
+                <div class="foots">
+                    <p>©2023 Regions Financial Corporation. All rights reserved.</p>
+                    <img style="width: 0.5rem;" src="./assets/icons8-dot-24.png" alt="">
+                    <p>1(800) REGIONS</p>
+                </div>
+            </footer>
+
+        </div>
+        
+    </main>
+    
+</body>
+
+<script src="app.js"></script>
+</html>
