@@ -186,7 +186,7 @@ nav {
 
 .dropdownUl {
     list-style: none;
-    line-height: 2rem;
+    line-height: 1.2rem;
     font-size: 0.9rem;
     z-index: 10000;
     color: white;
